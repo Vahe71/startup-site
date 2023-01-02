@@ -1,0 +1,917 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.container {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+@mixin blackButton {
+    width: 170px;
+    height: 48px;
+    background: #212529;
+    border-radius: 5px;
+    font: 400 20px 'Work Sans', sans-serif;
+    color: #fff;
+    cursor: pointer;
+}
+
+@mixin boldTitle {
+    font: 40px 'Crimson Text', serif;
+}
+
+@mixin underTitle {
+    font: 20px 'Work Sans', sans-serif;
+}
+
+@mixin miniTitle {
+    font: 700 16px 'Work Sans', sans-serif;
+    color: #74C69D;
+    letter-spacing: 5px;
+}
+
+.scroll-top {
+    background: #74C69D;
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+
+    span {
+        font: 2rem sans-serif;
+        transform: rotate(-90deg) translateY(-2px);
+        transition: 0.2s;
+    }
+
+    &:hover {
+
+        span {
+            transform: rotate(-90deg) translateY(-2px) translateX(5px);
+        }
+    }
+
+}
+
+header {
+    padding: 35px 0;
+    background: #74C69D;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .burger-icon {
+        width: 75px;
+        height: 75px;
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 50%;
+        padding: 10px;
+
+        >div {
+            width: 80%;
+            height: 4px;
+            background: #fff;
+        }
+
+        &:active {
+            background: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    a {
+        .icon {
+            width: 187px;
+            height: 50px;
+        }
+    }
+
+    nav {
+        transition: 1s;
+
+        &.active {
+            right: 0;
+        }
+
+        ul {
+            display: flex;
+            gap: 30px;
+
+            li {
+                list-style: none;
+                transition: 0.2s;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                a {
+                    font: 20px 'Work Sans', sans-serif;
+                    color: #fff;
+                    text-decoration: none;
+
+                }
+
+            }
+        }
+    }
+}
+
+.mainPage {
+    background: #74C69D;
+    padding-bottom: 82px;
+    padding-top: 40px;
+    margin-top: -1px;
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+
+        .about {
+            margin-top: 40px;
+            width: 416px;
+            color: #fff;
+
+            .mini-title {
+                margin-bottom: 15px;
+
+                h2 {
+                    font: 700 16px 'Work Sans', sans-serif;
+                }
+            }
+
+            .title {
+                margin-bottom: 15px;
+
+                h1 {
+                    font: 40px 'Crimson Text', serif;
+                }
+            }
+
+            .desc {
+                margin-bottom: 25px;
+
+                p {
+                    font: 15px 'Work Sans', sans-serif;
+                }
+            }
+
+            a {
+
+                button {
+                    width: 170px;
+                    height: 48px;
+                    border: none;
+                    outline: none;
+                    border-radius: 5px;
+                    font: 20px 'Work Sans', sans-serif;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .picture {
+            object-fit: contain;
+        }
+    }
+}
+
+.partners {
+    text-align: center;
+    margin-bottom: 73px;
+    background: #fff;
+
+    .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .desc {
+        max-width: 411px;
+        margin-top: 60px;
+
+        .mini-title {
+            @include miniTitle;
+        }
+
+        .title {
+            font: 700 40px 'Crimson Text', serif;
+            margin-top: 16px;
+        }
+
+        .mini-desc {
+            font: 400 20px 'Work Sans', sans-serif;
+            margin-top: 16px;
+
+        }
+    }
+
+    .icons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 55px;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        a {
+
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+
+    .button {
+        margin-top: 55px;
+
+        a {
+
+            button {
+                @include blackButton;
+            }
+        }
+    }
+
+}
+
+.container {
+
+    .info {
+        position: relative;
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            >img {
+                object-fit: contain;
+            }
+
+            .content {
+                max-width: 470px;
+                margin-top: 88px;
+
+                .title {
+                    @include boldTitle;
+                }
+
+                .desc {
+                    @include underTitle;
+                    font-size: 15px;
+                    color: rgba(33, 37, 41, 0.5);
+                    margin-top: 16px
+                }
+
+                button {
+                    @include blackButton;
+                    margin-top: 16px;
+                }
+            }
+        }
+
+        .top-content {
+            justify-content: center;
+            gap: 115px;
+
+            .content {
+                margin-right: 45px;
+            }
+
+        }
+
+        .bottom-content {
+            margin-left: 200px;
+            position: relative;
+            flex-wrap: wrap-reverse;
+
+            >img {
+                position: absolute;
+                top: -150px;
+                right: 0;
+            }
+        }
+    }
+}
+
+.our-talents {
+    margin-top: 308px;
+    background: #fff;
+
+    .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .info {
+        max-width: 404px;
+        text-align: center;
+
+        .mini-title {
+            @include miniTitle;
+        }
+
+        .title {
+            @include boldTitle;
+            margin-top: 16px
+        }
+
+        .desc {
+            @include underTitle;
+            margin-top: 16px
+        }
+    }
+
+    .cards {
+        display: flex;
+        gap: 0 47px;
+        margin-top: 45px;
+        flex-wrap: wrap;
+
+        .card {
+            width: 279px;
+            background: #FFFFFF;
+            box-shadow: 3px 4px 12px 1px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+            padding: 25px 0;
+
+            .img {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                img {
+                    width: 175px;
+                    height: 175px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    border: 2px solid #000;
+                }
+            }
+
+            .fullname {
+                @include boldTitle;
+                margin-top: 19px;
+                margin-left: 19px;
+
+                h1 {
+                    font-size: 24px;
+                    margin-top: 20px;
+                }
+            }
+
+            .profession {
+                @include underTitle;
+                margin-top: 17px;
+                margin-left: 19px;
+
+
+                h1 {
+                    font-size: 15px;
+                    margin-top: 17px;
+                }
+            }
+        }
+    }
+
+    .w-team {
+        @include blackButton;
+        margin-top: 45px;
+        margin-bottom: 54px;
+    }
+}
+
+footer {
+    min-height: 125px;
+    background: #74C69D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 25px;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        padding: none;
+    }
+
+    .content {
+        justify-content: space-between;
+        display: flex;
+        width: 90%;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            a {
+                text-decoration: none;
+
+                img {
+                    object-fit: contain;
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        .copyright {
+            @include underTitle;
+            text-decoration: none;
+            color: #fff;
+        }
+
+    }
+}
+
+
+//  PORTFOLIO       PORTFOLIO       PORTFOLIO       PORTFOLIO       PORTFOLIO
+
+.portfolio {
+    padding-bottom: 100px;
+    background: #fff;
+
+    .container .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+        width: 100%;
+
+        .info {
+            max-width: 411px;
+            text-align: center;
+
+            .mini-title {
+                h1 {
+                    @include miniTitle();
+                }
+            }
+
+            .title {
+                margin-top: 16px;
+
+                h1 {
+                    @include boldTitle();
+                }
+            }
+
+            .desc {
+                margin-top: 16px;
+
+                p {
+                    @include underTitle();
+                }
+            }
+        }
+
+        .cards {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 55px;
+            margin-top: 82px;
+            margin-bottom: 64px;
+
+            .card {
+                border-radius: 5px;
+                object-fit: cover;
+            }
+        }
+
+        .black-button {
+            @include blackButton();
+        }
+    }
+}
+
+
+// SERVICES         SERVICES         SERVICES         SERVICES         SERVICES
+
+.services {
+    background: #fff;
+    padding: 35px 10px 135px;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info {
+        text-align: center;
+        max-width: 411px;
+        margin-bottom: 78px;
+
+        .mini-title {
+
+            h1 {
+                @include miniTitle();
+            }
+        }
+
+        .title {
+            margin-top: 16px;
+
+            h1 {
+                @include boldTitle();
+            }
+        }
+
+        .desc {
+            margin-top: 16px;
+
+            p {
+                @include underTitle();
+            }
+        }
+
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px 105px;
+
+        .card {
+            width: 339px;
+            min-height: 542px;
+            box-shadow: 3px 4px 12px 1px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+            padding: 46px 30px;
+
+            .mini-title {
+                h1 {
+                    text-align: center;
+                    font: 15px 'Work Sans', sans-serif;
+
+                }
+            }
+
+            .price {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .money {
+                    font: 700 40px 'Work Sans', sans-serif;
+                    margin-right: 9px;
+                }
+
+                .about {
+                    color: rgba(33, 37, 41, 0.5);
+                    font: 15px 'Work Sans', sans-serif;
+                }
+            }
+
+            .desc {
+                margin-top: 10px;
+
+                p {
+                    text-align: center;
+                    font: 15px 'Work Sans', sans-serif;
+                    color: rgba(33, 37, 41, 0.5);
+                }
+            }
+
+            .checks {
+                margin-top: 57px;
+
+                li {
+                    font: 15px 'Work Sans', sans-serif;
+                    color: #212529;
+                    list-style: none;
+                    position: relative;
+                    padding-left: 30px;
+                    margin-bottom: 22px;
+
+                    &:before {
+                        content: '';
+                        background: url(../img/services/checked.png) no-repeat center / contain;
+                        position: absolute;
+                        left: 0;
+                        top: 2px;
+                        width: 17px;
+                        height: 13px;
+                    }
+                }
+            }
+
+            .button {
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+
+                button {
+                    @include blackButton();
+                }
+            }
+        }
+    }
+}
+
+
+// CONTACT          CONTACT          CONTACT          CONTACT          CONTACT          CONTACT          
+
+.contact-page {
+    padding: 30px 0 93px;
+
+    .info-panel {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 65px;
+
+        .info {
+            max-width: 411px;
+            text-align: center;
+
+            .title {
+
+                h1 {
+                    @include boldTitle();
+                }
+            }
+
+            .desc {
+
+                p {
+                    @include underTitle();
+                }
+            }
+        }
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+
+        .form-panel {
+            width: 575px;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                input[type='text'] {
+                    width: 100%;
+                    height: 38px;
+                    background: #EEEEEE;
+                    border: 1px solid #000000;
+                    border-radius: 5px;
+                }
+
+                textarea {
+                    width: 100%;
+                    height: 75px;
+                    background: #EEEEEE;
+                    border: 1px solid #000000;
+                    border-radius: 5px;
+                    resize: none;
+                    margin-bottom: 21px;
+                }
+                label {
+                    @include underTitle();
+                    margin-bottom: 16px;
+                    margin-top: 21px;
+                }
+                input[type='submit'] {
+                    @include blackButton();
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+// MEDIA        MEDIA       MEDIA       MEDIA       MEDIA       MEDIA       MEDIA       MEDIA       MEDIA       
+
+// HOMEPAGE
+
+@media screen and (max-width: 1450px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .container .info .bottom-content>img {
+        top: -100px;
+    }
+
+    .container .info .top-content .content {
+        margin-right: 0;
+    }
+
+    .container .info .top-content {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .our-talents .cards {
+        width: 100%;
+        justify-content: space-around;
+        gap: 20px;
+
+    }
+}
+
+@media screen and (max-width: 1250px) {}
+
+@media screen and (max-width: 1200px) {
+    .mainPage .content {
+        justify-content: center;
+    }
+
+    .mainPage .content .picture {
+        width: 100%;
+    }
+
+    .mainPage .content .about {
+        margin-top: 0;
+    }
+
+    .partners .icons {
+        justify-content: space-around;
+    }
+
+    .container .info .item {
+        justify-content: center;
+
+        img {
+            width: 100%;
+            position: static;
+        }
+    }
+
+    .container .info .bottom-content {
+        margin-left: 0;
+        margin-top: 60px;
+    }
+
+    .container .info .bottom-content {
+        margin-top: 40px;
+    }
+
+    .container .info .bottom-content>img {
+        top: 0;
+    }
+
+    .container .info .item .content {
+        max-width: none;
+        width: 100%;
+    }
+
+    .our-talents {
+        margin-top: 40px;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    header a .icon {
+        width: 129px;
+        height: 38px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .mainPage .content {
+        flex-wrap: wrap-reverse;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    footer .container {
+        padding: 0;
+
+        .content {
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    header nav {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 130px 30px 0;
+        z-index: 1;
+        height: 100vh;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header .burger-icon {
+        display: flex;
+        position: fixed;
+        right: 20px;
+        z-index: 2;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    footer .content .copyright {
+        font: 17px 'Work Sans', sans-serif;
+    }
+}
+
+
+// PORTFOLIO
+
+@media screen and (max-width: 1250px) {
+    .portfolio .container .content .cards {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .portfolio .container .content .cards .card {
+        width: 100%;
+    }
+}
+
+// SERVICES
+
+@media screen and (max-width: 370px) {
+    .services .cards .card {
+        width: 100%;
+    }
+}
+
+
+// CONTACT
+
+@media screen and (max-width: 1250px) {
+    .contact-page .content {
+        
+        .map {
+            width: 50%;
+
+            iframe {
+                width: 100%;
+            }
+        }
+
+        .form-panel {
+            width: 50%;
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    .contact-page .content {
+        flex-wrap: wrap;
+        
+        .map {
+            width: 100%;
+
+            iframe {
+                width: 100%;
+            }
+        }
+
+        .form-panel {
+            width: 100%;
+        }
+    }
+}
